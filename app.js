@@ -1,7 +1,7 @@
 let inp=document.querySelector("input");
 let btn=document.querySelector("button");
 let ul=document.querySelector("ul");
-let li=document.querySelector
+let li=document.querySelectorAll("li");
 
 btn.addEventListener("click", function(){
     let li2=document.createElement("li");
@@ -16,10 +16,21 @@ btn.addEventListener("click", function(){
     inp.value="";
 })
 
-let delBtns=document.querySelectorAll(".delete");
-for(let b of delBtns){
-    b.addEventListener("click",function(){
-        this.parentElement.remove();
-    })
-}
+// let delBtns=document.querySelectorAll(".delete");
+// for(let b of delBtns){
+//     b.addEventListener("click",function(){
+//         this.parentElement.remove();
+//     })
+// }
+
+ul.addEventListener("click", function(e){
+    if(e.target.nodeName=="BUTTON"){
+        console.log("delete");
+        e.target.parentElement.remove();
+
+    }
+})
+
+
+
 
